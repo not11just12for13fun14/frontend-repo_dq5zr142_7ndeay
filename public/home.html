@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>UMKM Village | Home</title>
+  <link rel="stylesheet" href="/public/styles.css"/>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">UMKM<span>Village</span></div>
+      <nav class="nav">
+        <a href="/public/home.html">Home</a>
+        <a href="/public/menu.html">Menu</a>
+        <a href="/public/orders.html">Orders</a>
+        <a href="/public/contact.html">Contact</a>
+      </nav>
+      <div>
+        <span class="btn small" id="basketBadge" style="display:none">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="spline-wrap">
+        <spline-viewer id="spline" url="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode"></spline-viewer>
+        <div class="hero-gradient" aria-hidden="true"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="reveal">Taste the Village</h1>
+        <p class="lead reveal">Fresh, local, and proudly made by our MSME partners. Order now and support the community.</p>
+        <div class="reveal" style="display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap">
+          <a class="btn primary" href="/public/menu.html">Browse Menu</a>
+          <a class="btn ghost" href="/public/orders.html">View Basket</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid">
+        <div class="card reveal">
+          <h3>Local Ingredients</h3>
+          <p>We prioritize fresh produce and authentic flavors from our village.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Empowering MSMEs</h3>
+          <p>Every order helps grow small businesses and families around us.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Fast Delivery</h3>
+          <p>Our drivers bring your order swiftly and safely to your door.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> UMKM Village</p>
+      <div></div>
+    </div>
+  </footer>
+
+  <script src="/public/script.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

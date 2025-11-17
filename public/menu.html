@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>UMKM Village | Menu</title>
+  <link rel="stylesheet" href="/public/styles.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">UMKM<span>Village</span></div>
+      <nav class="nav">
+        <a href="/public/home.html">Home</a>
+        <a href="/public/menu.html">Menu</a>
+        <a href="/public/orders.html">Orders</a>
+        <a href="/public/contact.html">Contact</a>
+      </nav>
+      <div>
+        <span class="btn small" id="basketBadge" style="display:none">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal">Our Favorites</h2>
+        <p class="lead reveal">Swipe horizontally to explore MSME menus.</p>
+        <div id="menuList" class="scroll-row reveal">
+          
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop" alt="Nasi Goreng"/>
+            <div class="body">
+              <h4>Nasi Goreng</h4>
+              <p>Fried rice with local spices</p>
+              <div class="price">Rp 25.000</div>
+              <button class="btn small" data-add data-id="nasgor" data-name="Nasi Goreng" data-price="25000">Add</button>
+            </div>
+          </article>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="Sate Ayam"/>
+            <div class="body">
+              <h4>Sate Ayam</h4>
+              <p>Grilled chicken skewers with peanut sauce</p>
+              <div class="price">Rp 30.000</div>
+              <button class="btn small" data-add data-id="sate" data-name="Sate Ayam" data-price="30000">Add</button>
+            </div>
+          </article>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop" alt="Bakso"/>
+            <div class="body">
+              <h4>Bakso</h4>
+              <p>Beef meatball soup</p>
+              <div class="price">Rp 22.000</div>
+              <button class="btn small" data-add data-id="bakso" data-name="Bakso" data-price="22000">Add</button>
+            </div>
+          </article>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1478144592103-25e218a04891?q=80&w=800&auto=format&fit=crop" alt="Mie Goreng"/>
+            <div class="body">
+              <h4>Mie Goreng</h4>
+              <p>Stir-fried noodles with veggies</p>
+              <div class="price">Rp 20.000</div>
+              <button class="btn small" data-add data-id="miegor" data-name="Mie Goreng" data-price="20000">Add</button>
+            </div>
+          </article>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?q=80&w=800&auto=format&fit=crop" alt="Es Teh"/>
+            <div class="body">
+              <h4>Es Teh</h4>
+              <p>Sweet iced tea</p>
+              <div class="price">Rp 6.000</div>
+              <button class="btn small" data-add data-id="esteh" data-name="Es Teh" data-price="6000">Add</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> UMKM Village</p>
+      <div></div>
+    </div>
+  </footer>
+
+  <script src="/public/script.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

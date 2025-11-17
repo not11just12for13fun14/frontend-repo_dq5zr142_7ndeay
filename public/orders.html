@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>UMKM Village | Orders & Tracking</title>
+  <link rel="stylesheet" href="/public/styles.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">UMKM<span>Village</span></div>
+      <nav class="nav">
+        <a href="/public/home.html">Home</a>
+        <a href="/public/menu.html">Menu</a>
+        <a href="/public/orders.html">Orders</a>
+        <a href="/public/contact.html">Contact</a>
+      </nav>
+      <div>
+        <span class="btn small" id="basketBadge" style="display:none">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h2 class="reveal">Your Basket</h2>
+      <div class="reveal" style="overflow:auto">
+        <table id="basketTable" class="table">
+          <thead>
+            <tr><th>Item</th><th>Price</th><th>Qty</th><th>Subtotal</th><th>Action</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="total-line"><strong>Total:</strong> <span id="basketTotal">Rp 0</span>
+          <button class="btn primary" id="checkoutBtn">Checkout</button>
+        </div>
+      </div>
+
+      <h2 class="reveal" style="margin-top:28px">Driver Tracking</h2>
+      <div class="map reveal" id="map">
+        <div class="route"></div>
+        <div class="driver" id="driver" style="left:10%; top:80%"></div>
+      </div>
+      <p id="trackStatus" class="reveal" style="margin-top:8px; color:var(--muted)">Waiting for order...</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> UMKM Village</p>
+      <div></div>
+    </div>
+  </footer>
+
+  <script src="/public/script.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* Orange UMKM Theme */
+:root{
+  --orange:#ff7a00;
+  --orange-2:#ff9b2f;
+  --bg:#0e0e0e;
+  --bg-soft:#151515;
+  --fg:#ffffff;
+  --muted:#cfcfcf;
+  --card: rgba(255,255,255,0.06);
+  --glass: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.12);
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+  color:var(--fg);
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(255,122,0,0.18), transparent 55%),
+              radial-gradient(900px 500px at 100% 0, rgba(255,155,47,0.16), transparent 55%),
+              var(--bg);
+  line-height:1.6;
+}
+.container{width:min(1120px, 90%); margin:0 auto}
+
+.header{
+  position:sticky; top:0; z-index:10;
+  background: color-mix(in oklab, var(--bg), transparent 10%);
+  border-bottom:1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.header-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
+.brand{font-weight:900; letter-spacing:.4px}
+.brand span{color:var(--orange)}
+.nav{display:flex; gap:1rem}
+.nav a{ color:var(--muted); text-decoration:none; font-weight:700; padding:8px 10px; border-radius:10px }
+.nav a:hover{ color:var(--fg); background:var(--glass) }
+
+.hero{
+  position:relative; min-height:70vh; display:grid; place-items:center; overflow:hidden;
+}
+.spline-wrap{ position:absolute; inset:0; z-index:0 }
+spline-viewer{ width:100%; height:100%; display:block }
+.hero-gradient{ position:absolute; inset:0; pointer-events:none; background:
+  radial-gradient(800px 400px at 20% 20%, rgba(255,122,0,0.25), transparent 50%),
+  radial-gradient(700px 370px at 80% 30%, rgba(255,155,47,0.20), transparent 55%),
+  linear-gradient(to top, color-mix(in oklab, var(--bg), transparent 10%), transparent 60%);
+}
+.hero-content{ position:relative; z-index:1; text-align:center; padding: 1rem 1rem 2rem }
+.hero h1{ font-size: clamp(32px, 5vw, 64px); margin:0 0 .5rem; text-shadow:0 20px 40px rgba(0,0,0,.25) }
+.hero p{ color:var(--muted); margin:0 auto 1.25rem; max-width:720px }
+
+.btn{ background:var(--glass); color:var(--fg); border:1px solid var(--border); padding:10px 16px; border-radius:12px; font-weight:800; cursor:pointer; box-shadow:var(--shadow); transition:.2s ease }
+.btn:hover{ transform: translateY(-1px) scale(1.01) }
+.btn.primary{ background: linear-gradient(135deg, var(--orange), var(--orange-2)); border-color:transparent; color:#1a1a1a }
+.btn.small{ padding:8px 12px; border-radius:10px; font-weight:700 }
+.btn.ghost{ background:transparent }
+
+.section{ padding:72px 0; background: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--bg-soft), transparent 70%)) }
+.section.alt{ border-block:1px solid var(--border); background: linear-gradient(to bottom, color-mix(in oklab, var(--bg-soft), transparent 65%), transparent 60%) }
+.section h2{ font-size: clamp(24px, 3vw, 36px); margin:0 0 16px }
+.section p.lead{ color:var(--muted); max-width:760px }
+.grid{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) }
+.card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; min-height:160px; display:flex; flex-direction:column; gap:.5rem; backdrop-filter: blur(6px) }
+.card h3{ margin:4px 0 }
+.card p{ color:var(--muted) }
+
+.footer{ border-top:1px solid var(--border); background: color-mix(in oklab, var(--bg), transparent 5%) }
+.footer-inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:16px 0 }
+
+/* Forms */
+.form{ display:grid; gap:12px; max-width:520px }
+.field{ display:grid; gap:6px }
+input, textarea, select{
+  background:var(--glass); border:1px solid var(--border); color:var(--fg);
+  padding:10px 12px; border-radius:10px; outline:none; transition:.2s ease
+}
+input:focus, textarea:focus, select:focus{ border-color: color-mix(in oklab, var(--orange), var(--border) 40%) }
+
+/* Horizontal menu scroller */
+.scroll-row{ display:flex; gap:12px; overflow:auto; padding-bottom:6px; scroll-snap-type:x mandatory }
+.scroll-row::-webkit-scrollbar{ height:10px }
+.scroll-row::-webkit-scrollbar-thumb{ background:var(--orange); border-radius:10px }
+.menu-card{ flex: 0 0 260px; scroll-snap-align:start; background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden }
+.menu-card img{ width:100%; height:150px; object-fit:cover; display:block }
+.menu-card .body{ padding:12px }
+.menu-card h4{ margin:6px 0 4px }
+.menu-card p{ margin:0; color:var(--muted) }
+.menu-card .price{ color:var(--orange); font-weight:900; margin-top:6px }
+
+/* Table / basket */
+.table{ width:100%; border-collapse:collapse }
+.table th, .table td{ border-bottom:1px solid var(--border); padding:10px; text-align:left }
+.table th{ color:var(--muted); font-weight:700 }
+.qty{ display:flex; align-items:center; gap:8px }
+.qty button{ padding:4px 10px }
+.total-line{ display:flex; justify-content:flex-end; gap:16px; margin-top:12px; align-items:center }
+
+/* Map mock */
+.map{ position:relative; height:280px; border:1px solid var(--border); border-radius:16px; background:linear-gradient(45deg, rgba(255,122,0,.05), rgba(255,155,47,.05)); overflow:hidden }
+.route{ position:absolute; inset:0; background-image: linear-gradient(to right, rgba(255,122,0,.3) 2px, transparent 2px), linear-gradient(to bottom, rgba(255,122,0,.2) 2px, transparent 2px); background-size: 40px 40px, 40px 40px }
+.driver{ position:absolute; width:18px; height:18px; background:var(--orange); border-radius:50%; border:2px solid #111; box-shadow:0 4px 12px rgba(0,0,0,.4) }
+
+/* Reveal */
+.reveal{ opacity:0; transform: translateY(16px); transition: all .6s cubic-bezier(.2,.65,.3,1) }
+.reveal.in-view{ opacity:1; transform: translateY(0) }
